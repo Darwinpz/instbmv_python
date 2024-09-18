@@ -1,0 +1,76 @@
+<div class="tab-pane fade show active" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#userModal">
+                Agregar Usuario
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+            {% include '/views/tables/table_users.html' %}
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalLabel">Agregar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="post" id="form_usuario">
+                    <div class="modal-body">
+                        
+                        <div class="row">
+
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                <label class="form-label">Cedula: </label>
+                                <input type="text" class="form-control" id="u_cedula" name="u_cedula" placeholder="Cedula de Identidad" required>
+                            </div>
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                <label class="form-label">Nombre: </label>
+                                <input type="text" class="form-control" id="u_nombre" name="u_nombre" placeholder="Nombre Completo" required>
+                            </div>
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                <label class="form-label">Usuario: </label>
+                                <input type="text" class="form-control" id="u_usuario" name="u_usuario" placeholder="Usuario" required>
+                            </div>
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                <label class="form-label">Clave: </label>
+                                <input type="text" class="form-control" id="u_clave" name="u_clave" placeholder="Clave de seguridad" required>
+                            </div>
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                <label class="form-label">Rol: </label>
+                                <select class="form-select" id="u_rol" name="u_rol" required>
+                                    <option disabled selected value="">Selecciona</option>
+                                    <option>ADMINISTRADOR</option>
+                                    <option>CLIENTE</option>
+                                </select>    
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="submit" id="btn-guardar-usuario" class="btn btn-primary">Guardar</button>
+                        <button  type="submit" id="btn-editar-usuario" class="btn btn-success">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/usuarios.js"></script>
+
+</div>
